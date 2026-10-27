@@ -20,4 +20,14 @@ Se necesita JDK 17 o superior. Desde la carpeta `practica3`, en PowerShell:
 El Maven Wrapper descarga automaticamente la version indicada en
 `.mvn/wrapper/maven-wrapper.properties` la primera vez que se ejecuta.
 
+## Revisar formato y estilo
+
+```powershell
+.\mvnw.cmd spotless:check
+.\mvnw.cmd checkstyle:check
+.\mvnw.cmd test
+```
+
+Si el formato falla, ejecutar `.\mvnw.cmd spotless:apply` y revisar los cambios.
+
 La configuracion del hook, el analisis estatico y las evidencias del informe final se agregaran en pasos posteriores.
