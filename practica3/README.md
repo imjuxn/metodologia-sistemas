@@ -30,4 +30,16 @@ El Maven Wrapper descarga automaticamente la version indicada en
 
 Si el formato falla, ejecutar `.\mvnw.cmd spotless:apply` y revisar los cambios.
 
-La configuracion del hook, el analisis estatico y las evidencias del informe final se agregaran en pasos posteriores.
+## Activar el control antes de cada commit
+
+Desde cualquier carpeta de este repositorio, ejecutar una sola vez:
+
+```powershell
+git config core.hooksPath .githooks
+```
+
+El hook `pre-commit` ejecuta las tres verificaciones anteriores en orden.
+Si alguna falla, Git no crea el commit. El hook solo se activa en la copia
+local donde se configura; los demas colaboradores deben activarlo tambien.
+
+El analisis estatico y las evidencias del informe final se agregaran en pasos posteriores.
