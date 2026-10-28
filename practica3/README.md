@@ -42,4 +42,5 @@ El hook `pre-commit` ejecuta las tres verificaciones anteriores en orden.
 Si alguna falla, Git no crea el commit. El hook solo se activa en la copia
 local donde se configura; los demas colaboradores deben activarlo tambien.
 
-El analisis estatico y las evidencias del informe final se agregaran en pasos posteriores.
+El ejemplo y los resultados de auditoria estatica estan en `auditoria/README.md`.
+Las evidencias del informe final se agregaran en el paso siguiente.
