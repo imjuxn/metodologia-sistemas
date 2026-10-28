@@ -44,3 +44,15 @@ local donde se configura; los demas colaboradores deben activarlo tambien.
 
 El ejemplo y los resultados de auditoria estatica estan en `auditoria/README.md`.
 Las evidencias del informe final se agregaran en el paso siguiente.
+
+## Medir cobertura
+
+Desde `practica3`, ejecutar:
+
+```powershell
+.\mvnw.cmd clean verify
+```
+
+El reporte HTML se genera en `target/site/jacoco/index.html` y el XML en
+`target/site/jacoco/jacoco.xml`. La carpeta `target` se regenera y no se sube
+al repositorio.

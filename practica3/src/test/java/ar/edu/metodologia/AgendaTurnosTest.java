@@ -44,4 +44,29 @@ class AgendaTurnosTest {
 
         assertThrows(IllegalArgumentException.class, () -> agenda.reservar("  ", FECHA_HORA));
     }
+
+    @Test
+    void rechazaPacienteNulo() {
+        AgendaTurnos agenda = new AgendaTurnos();
+
+        assertThrows(IllegalArgumentException.class, () -> agenda.reservar(null, FECHA_HORA));
+    }
+
+    @Test
+    void cancelarConPacienteNuloNoEliminaTurno() {
+        AgendaTurnos agenda = new AgendaTurnos();
+        agenda.reservar("Ana", FECHA_HORA);
+
+        assertFalse(agenda.cancelar(null, FECHA_HORA));
+        assertFalse(agenda.estaDisponible(FECHA_HORA));
+    }
+
+    @Test
+    void rechazaFechaNula() {
+        AgendaTurnos agenda = new AgendaTurnos();
+
+        assertThrows(NullPointerException.class, () -> agenda.reservar("Ana", null));
+        assertThrows(NullPointerException.class, () -> agenda.cancelar("Ana", null));
+        assertThrows(NullPointerException.class, () -> agenda.estaDisponible(null));
+    }
 }
